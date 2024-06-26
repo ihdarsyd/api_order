@@ -6,15 +6,6 @@ import pandas as pd
 app = Flask(__name__)
 
 def generate_dummy_data(page_size=100):
-    # dummy_data = []
-    # for i in range(page_size):
-    #     dummy_data.append({
-    #         "id": i + 1,
-    #         "name": f"User {i + 1}",
-    #         "email": f"user{i + 1}@example.com",
-    #         "birthdate": (datetime.now() - timedelta(days=random.randint(365, 3650))).strftime('%Y-%m-%d')
-    #     })
-
     data_csv = pd.read_csv('data/order.csv')
     data_dict = data_csv.to_dict('records')
     return data_dict
